@@ -60,3 +60,8 @@ Rom rom = RomIdentifier.getRom(checkers);
 ## 原理
 
 原理比较简单，请自行阅读源码。
+
+
+##参考
+
+[SenhLinsh/Android-ROM-Identifier](https://github.com/SenhLinsh/Android-ROM-Identifier)
