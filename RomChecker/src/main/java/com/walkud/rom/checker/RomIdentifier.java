@@ -20,7 +20,7 @@ import java.util.List;
  * <p>
  * 识别逻辑：
  * 第一步：检查所有Checker系统属性是否与当前手机匹配，匹配则返回对应Rom，否则执行第二步。
- * 第二步：检查所有Checker手机制造商是否与当前手机匹配，匹配则返回对应Rom
+ * 第二步：检查所有Checker手机制造商是否与当前手机匹配，匹配则返回对应Rom，可能不准确
  * <p>
  * <p>
  * Created by Zhuliya on 2018/10/22
@@ -28,6 +28,8 @@ import java.util.List;
 public final class RomIdentifier {
 
     private static volatile Rom rom;//已识别的Rom
+
+    private static boolean isMaCheck = true;//是否开启根据手机制造商进行Rom判断，默认开启
 
     private RomIdentifier() {
     }
@@ -48,6 +50,15 @@ public final class RomIdentifier {
                 new AmigoChecker(),
                 new EuiChecker()
         );
+    }
+
+    /**
+     * 设置是否开启根据手机制造商进行Rom判断
+     *
+     * @param maCheck
+     */
+    public static void setMaCheck(boolean maCheck) {
+        isMaCheck = maCheck;
     }
 
     /**
@@ -97,10 +108,13 @@ public final class RomIdentifier {
             }
         }
 
-        //第二步，检查所有Checker手机制造商是否与当前手机匹配，匹配则返回对应Rom
-        for (Checker checker : checkers) {
-            if (checker.checkManufacturer()) {
-                return checker.getRom();
+        //检查是否开启手机制造商检查
+        if (isMaCheck) {
+            //第二步，检查所有Checker手机制造商是否与当前手机匹配，匹配则返回对应Rom
+            for (Checker checker : checkers) {
+                if (checker.checkManufacturer()) {
+                    return checker.getRom();
+                }
             }
         }
 
