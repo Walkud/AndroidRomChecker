@@ -11,6 +11,10 @@ import com.walkud.rom.checker.cc.MiuiChecker;
 import com.walkud.rom.checker.cc.SmartisanChecker;
 import com.walkud.rom.checker.utils.RomProperties;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Rom 识别入口类
  * <p>
@@ -29,12 +33,12 @@ public final class RomIdentifier {
     }
 
     /**
-     * 获取识别器
+     * 获取默认识别器
      *
      * @return
      */
-    private static Checker[] getChecker() {
-        return new Checker[]{
+    public static List<Checker> getChecker() {
+        return Arrays.asList(
                 new MiuiChecker(),
                 new EmuiChecker(),
                 new ColorOsChecker(),
@@ -43,7 +47,7 @@ public final class RomIdentifier {
                 new FlymeChecker(),
                 new AmigoChecker(),
                 new EuiChecker()
-        };
+        );
     }
 
     /**
@@ -62,7 +66,7 @@ public final class RomIdentifier {
      * @param checkers 自定义识别器
      * @return
      */
-    public static Rom getRom(Checker[] checkers) {
+    public static Rom getRom(List<Checker> checkers) {
         if (rom == null) {
             synchronized (RomIdentifier.class) {
                 if (rom == null) {
@@ -78,7 +82,7 @@ public final class RomIdentifier {
      *
      * @return
      */
-    private static Rom getRomType(Checker[] checkers) {
+    private static Rom getRomType(List<Checker> checkers) {
 
         if (checkers == null) {
             checkers = getChecker();
