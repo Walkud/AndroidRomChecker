@@ -46,7 +46,7 @@ public enum Rom {
 
 ```
 
-###### **PS：未适配Rom可自行参照已实现的Cheker进行适配**
+##### 未适配Rom可自行参照已实现的Cheker进行适配
 
 ```
 //获取默认识别器
@@ -57,11 +57,13 @@ Rom rom = RomIdentifier.getRom(checkers);
 
 ```
 
+###### **PS：后续会持续添加未适配Rom的识别器。**
+
 ## 原理
 
 原理比较简单，请自行阅读源码。
 
 
-##参考
+## 参考
 
 [SenhLinsh/Android-ROM-Identifier](https://github.com/SenhLinsh/Android-ROM-Identifier)
