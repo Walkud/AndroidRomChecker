@@ -27,21 +27,17 @@ public class FlymeChecker extends Checker {
     public boolean checkBuildProp(RomProperties romProperties) {
         String published = romProperties.getProperty(FLYME_PUBLISHED);
         String flymeSetupWizard = romProperties.getProperty(FLYME_SETUP_WIZARD);
+
         if (!TextUtils.isEmpty(published) || !TextUtils.isEmpty(flymeSetupWizard)) {
+
             String versionName = romProperties.getProperty(FLYME_BUILD_DISPLAY_ID);
-            Rom.Flyme.setVersionName(versionName);
-            try {
-                //截取版本
-                Matcher matcher = Pattern.compile("Flyme [^\\d]*([\\d.]+)[^\\d]*").matcher(versionName);
-                if (matcher.find()) {
-                    String version = matcher.group(1);
-                    Rom.Flyme.setVersion(version);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
+
         return false;
     }
 }

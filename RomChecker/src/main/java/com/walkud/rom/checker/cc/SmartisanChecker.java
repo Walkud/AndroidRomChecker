@@ -20,16 +20,13 @@ public class SmartisanChecker extends Checker {
 
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
-
         String versionName = romProperties.getProperty(SMARTISAN_OS_VERSION_NAME);
+
         if (!TextUtils.isEmpty(versionName)) {
-            String version = versionName;
-            int index = version.indexOf("-");// "4.2.5-201805240052-user-col",截取版本号前缀
-            if (index > 0) {
-                version = version.substring(0, index);
-            }
-            Rom.SmartisanOS.setVersion(version);
-            Rom.SmartisanOS.setVersionName(versionName);
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
 

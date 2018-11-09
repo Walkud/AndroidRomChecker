@@ -11,8 +11,7 @@ import com.walkud.rom.checker.utils.RomProperties;
  */
 public class EmuiChecker extends Checker {
 
-    private static final String EMUI_VERSION = "ro.build.version.emui"; // "EmotionUI_4.0.2"
-    private static final String EMUI_API_LEVEL = "ro.build.hw_emui_api_level"; //9
+    private static final String EMUI_VERSION_NAME = "ro.build.version.emui"; // "EmotionUI_4.0.2"
 
     @Override
     public Rom getRom() {
@@ -21,11 +20,13 @@ public class EmuiChecker extends Checker {
 
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
-        String versionName = romProperties.getProperty(EMUI_VERSION);
+        String versionName = romProperties.getProperty(EMUI_VERSION_NAME);
+
         if (!TextUtils.isEmpty(versionName)) {
-            String version = romProperties.getProperty(EMUI_API_LEVEL);
-            Rom.EMUI.setVersionName(versionName);
-            Rom.EMUI.setVersion(version);
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
 

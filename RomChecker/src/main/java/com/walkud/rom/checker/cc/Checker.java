@@ -3,6 +3,9 @@ package com.walkud.rom.checker.cc;
 import com.walkud.rom.checker.Rom;
 import com.walkud.rom.checker.utils.RomProperties;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Rom识别抽象类
  * <p>
@@ -31,6 +34,23 @@ public abstract class Checker {
      */
     public boolean checkManufacturer() {
         return getRom().getManufacturer().equalsIgnoreCase(getRom().getMa());
+    }
+
+    /**
+     * 解析版本Code
+     *
+     * @param versionName 版本名称 （例如："7.6.15"）
+     */
+    protected void parseVersionCode(String versionName) {
+        Matcher matcher = Pattern.compile("([\\d.]+)[^\\d]*").matcher(versionName);
+        if (matcher.find()) {
+            try {
+                String versionStr = matcher.group(1);
+                getRom().setVersionCode(Integer.parseInt(versionStr.split("\\.")[0]));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

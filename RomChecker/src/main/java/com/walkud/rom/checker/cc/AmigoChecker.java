@@ -24,17 +24,13 @@ public class AmigoChecker extends Checker {
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
         String versionName = romProperties.getProperty(AMIGO_DISPLAY_ID);
-        if (!TextUtils.isEmpty(versionName)) {
-            Rom.AmigoOS.setVersionName(versionName);
-            try {
-                Matcher matcher = Pattern.compile("amigo([\\d.]+)[a-zA-Z]*").matcher(versionName); //"amigo3.5.1"
-                if (matcher.find()) {
-                    String version = matcher.group(1);
-                    Rom.AmigoOS.setVersion(version);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
+        if (!TextUtils.isEmpty(versionName) && versionName.matches("amigo([\\d.]+)[a-zA-Z]*")) {
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
+            return true;
         }
 
         return false;

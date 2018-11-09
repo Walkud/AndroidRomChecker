@@ -8,6 +8,7 @@ import com.walkud.rom.checker.cc.EuiChecker;
 import com.walkud.rom.checker.cc.FlymeChecker;
 import com.walkud.rom.checker.cc.FuntouchOsChecker;
 import com.walkud.rom.checker.cc.MiuiChecker;
+import com.walkud.rom.checker.cc.SenseChecker;
 import com.walkud.rom.checker.cc.SmartisanChecker;
 import com.walkud.rom.checker.utils.RomProperties;
 
@@ -48,7 +49,8 @@ public final class RomIdentifier {
                 new SmartisanChecker(),
                 new FlymeChecker(),
                 new AmigoChecker(),
-                new EuiChecker()
+                new EuiChecker(),
+                new SenseChecker()
         );
     }
 

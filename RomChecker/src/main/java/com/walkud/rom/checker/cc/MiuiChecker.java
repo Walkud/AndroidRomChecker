@@ -5,6 +5,9 @@ import android.text.TextUtils;
 import com.walkud.rom.checker.Rom;
 import com.walkud.rom.checker.utils.RomProperties;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * 小米MIUI ROM
  * Created by Zhuliya on 2018/10/22
@@ -33,12 +36,17 @@ public class MiuiChecker extends Checker {
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
         String version = romProperties.getProperty(MIUI_VERSION);
+
         if (!TextUtils.isEmpty(version)) {
+
             String versionName = romProperties.getProperty(MIUI_VERSION_NAME);
-            Rom.MIUI.setVersionName(versionName);
-            Rom.MIUI.setVersion(version);
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
+
         return false;
     }
 

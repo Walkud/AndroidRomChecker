@@ -17,9 +17,9 @@ public enum Rom {
     SmartisanOS("smartisan"), // 锤子
     AmigoOS("amigo"), // 金立
     EUI("letv"), // 乐视
+    Sense("htc"), // HTC
 
     //未适配
-    Sense(""), // HTC
     _360OS(""), // 奇酷360
     NubiaUI(""), // 努比亚
     H2OS(""), // 一加
@@ -34,7 +34,7 @@ public enum Rom {
     Other(""); // CyanogenMod, Lewa OS, 百度云OS, Tencent OS, 深度OS, IUNI OS, Tapas OS, Mokee
 
     private String ma;//Rom制造商
-    private String version;//版本Code
+    private int versionCode;//版本Code
     private String versionName;//版本名称
     private String manufacturer = Build.MANUFACTURER;//当前手机制造商
 
@@ -54,12 +54,12 @@ public enum Rom {
         return manufacturer;
     }
 
-    public String getVersion() {
-        return version;
+    public int getVersionCode() {
+        return versionCode;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setVersionCode(int versionCode) {
+        this.versionCode = versionCode;
     }
 
     public String getVersionName() {
@@ -74,7 +74,7 @@ public enum Rom {
     public String toString() {
         return "ROM{" +
                 "name='" + this.name() + '\'' +
-                ",version=" + version +
+                ",versionCode=" + versionCode +
                 ", versionName='" + versionName + '\'' +
                 ",ma=" + ma + '\'' +
                 ",manufacturer=" + manufacturer + '\'' +

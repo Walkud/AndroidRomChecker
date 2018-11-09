@@ -11,8 +11,7 @@ import com.walkud.rom.checker.utils.RomProperties;
  */
 public class ColorOsChecker extends Checker {
 
-    public static final String COLOROS_ROM_VERSION = "ro.build.version.opporom"; // "V5.0"
-    public static final String COLOROS_ROM_VERSION_NAME = "ro.build.version.ota"; // "PACM00_11.A.19_0190_201806231212"
+    public static final String COLOROS_ROM_VERSION_NAME = "ro.build.version.opporom"; // "V5.0"
 
     @Override
     public Rom getRom() {
@@ -21,12 +20,13 @@ public class ColorOsChecker extends Checker {
 
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
-        String version = romProperties.getProperty(COLOROS_ROM_VERSION);
+        String versionName = romProperties.getProperty(COLOROS_ROM_VERSION_NAME);
 
-        if (!TextUtils.isEmpty(version)) {
-            String versionName = romProperties.getProperty(COLOROS_ROM_VERSION_NAME);
-            Rom.ColorOS.setVersion(version);
-            Rom.ColorOS.setVersionName(versionName);
+        if (!TextUtils.isEmpty(versionName)) {
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
 

@@ -11,7 +11,7 @@ import com.walkud.rom.checker.utils.RomProperties;
  */
 public class EuiChecker extends Checker {
 
-    public static final String EUI_VERSION = "ro.letv.release.version"; // "5.9.023S"
+    public static final String EUI_VERSION_NAME = "ro.letv.release.version"; // "5.9.023S"
 
     @Override
     public Rom getRom() {
@@ -20,12 +20,16 @@ public class EuiChecker extends Checker {
 
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
-        String version = romProperties.getProperty(EUI_VERSION);
-        if (!TextUtils.isEmpty(version)) {
-            Rom.EUI.setVersion(version);
-            Rom.EUI.setVersionName(version);
+        String versionName = romProperties.getProperty(EUI_VERSION_NAME);
+
+        if (!TextUtils.isEmpty(versionName)) {
+
+            parseVersionCode(versionName);
+            getRom().setVersionName(versionName);
+
             return true;
         }
+
         return false;
     }
 }
