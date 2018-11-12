@@ -1,6 +1,20 @@
 # Android Rom 识别库
 
+![JCenter](https://img.shields.io/badge/JCenter-1.0.0-blue.svg) ![Licence](https://img.shields.io/badge/Licence-Apache-brightgreen.svg) ![MinSDK](https://img.shields.io/badge/MinSDK-4%2B-red.svg)
+
+
+## 效果图
+小米 MIX 3 Android 9.0
+
+<img src="./material/app_gif.gif" width="30%">
+
 ## 使用说明
+
+```
+//添加依赖
+implementation 'com.walkud.rom.checker:RomChecker:1.0.0'
+
+```
 
 
 ```
@@ -26,9 +40,9 @@ public enum Rom {
     SmartisanOS("smartisan"), // 锤子
     AmigoOS("amigo"), // 金立
     EUI("letv"), // 乐视
+    Sense("sense"), // HTC
 
     //未适配
-    Sense(""), // HTC
     _360OS(""), // 奇酷360
     NubiaUI(""), // 努比亚
     H2OS(""), // 一加
