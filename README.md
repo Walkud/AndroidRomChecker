@@ -75,8 +75,9 @@ Rom rom = RomIdentifier.getRom(checkers);
 
 ## 原理
 
-原理比较简单，请自行阅读源码。
+执行getprop命令，获取到系统配置文件属性,根据判断不同属性值是否存在，来达到判断Rom的类型；再根据对应Rom的属性值来获取版本信息。
 
+<img src="./material/rom_flow.png" width="70%">
 
 ## 参考
 
