@@ -19,6 +19,7 @@ public enum Rom {
     EUI("letv"), // 乐视
     Sense("htc"), // HTC
     LG("lge"), // LG
+    Google("google"), // 原生
 
     //未适配
     _360OS(""), // 奇酷360
@@ -30,7 +31,7 @@ public enum Rom {
     Sony("sony"), // 索尼
     Lenovo("lenovo"), // 联想
     ZTE("zte"),//中兴
-    Google(""), // 原生
+
     Other(""); // CyanogenMod, Lewa OS, 百度云OS, Tencent OS, 深度OS, IUNI OS, Tapas OS, Mokee
 
     private String ma;//Rom制造商
