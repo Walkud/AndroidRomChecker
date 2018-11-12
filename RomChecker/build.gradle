@@ -18,6 +18,6 @@ dependencies {
 
 //----------------发布-----------------
 ext {
-    VERSION = "1.0.0"//发布版本
+    VERSION = "1.0.2"//发布版本
 }
 apply from: "./jcenter.gradle"

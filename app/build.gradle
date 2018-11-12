@@ -29,5 +29,5 @@ dependencies {
 
     implementation project(':RomChecker')
 
-//    implementation 'com.walkud.rom.checker:RomChecker:1.0.0'
+//    implementation 'com.walkud.rom.checker:RomChecker:1.0.2'
 }

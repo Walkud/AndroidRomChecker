@@ -13,7 +13,8 @@ import com.walkud.rom.checker.utils.RomProperties;
  */
 public class GoogleChecker extends Checker {
 
-    private static final String GOOGLE_THEME_ID = "ro.com.google.ime.theme_id";//5
+    private static final String GOOGLE_CLIENT_ID_BASE = "ro.com.google.clientidbase";//android-google
+    //    private static final String GOOGLE_THEME_ID = "ro.com.google.ime.theme_id";//5
     private static final String GOOGLE_VERSION_NAME = "ro.build.version.release";//7.1.1
 
     @Override
@@ -23,15 +24,18 @@ public class GoogleChecker extends Checker {
 
     @Override
     public boolean checkBuildProp(RomProperties romProperties) {
-        String themeId = romProperties.getProperty(GOOGLE_THEME_ID);
+        String clientIdBase = romProperties.getProperty(GOOGLE_CLIENT_ID_BASE);
+//        String themeId = romProperties.getProperty(GOOGLE_THEME_ID);
 
-        if (!TextUtils.isEmpty(themeId)) {
+        if ("android-google".equals(clientIdBase)) {
             String versionName = romProperties.getProperty(GOOGLE_VERSION_NAME);
 
             getRom().setVersionCode(Build.VERSION.SDK_INT);
             getRom().setVersionName(versionName);
 
+            return true;
         }
+
         return false;
     }
 }
