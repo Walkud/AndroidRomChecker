@@ -1,6 +1,6 @@
 # Android Rom 识别库
 
-![JCenter](https://img.shields.io/badge/JCenter-1.0.0-blue.svg) ![Licence](https://img.shields.io/badge/Licence-Apache-brightgreen.svg) ![MinSDK](https://img.shields.io/badge/MinSDK-4%2B-red.svg)
+![JCenter](https://img.shields.io/badge/JCenter-1.0.2-blue.svg) ![Licence](https://img.shields.io/badge/Licence-Apache-brightgreen.svg) ![MinSDK](https://img.shields.io/badge/MinSDK-4%2B-red.svg)
 
 
 ## 效果图
