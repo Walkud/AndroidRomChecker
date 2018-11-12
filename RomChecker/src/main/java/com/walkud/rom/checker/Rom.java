@@ -18,6 +18,7 @@ public enum Rom {
     AmigoOS("amigo"), // 金立
     EUI("letv"), // 乐视
     Sense("htc"), // HTC
+    LG("lge"), // LG
 
     //未适配
     _360OS(""), // 奇酷360
@@ -28,7 +29,6 @@ public enum Rom {
     SamSung("samsung"), // 三星
     Sony("sony"), // 索尼
     Lenovo("lenovo"), // 联想
-    LG("lg"), // LG
     ZTE("zte"),//中兴
     Google(""), // 原生
     Other(""); // CyanogenMod, Lewa OS, 百度云OS, Tencent OS, 深度OS, IUNI OS, Tapas OS, Mokee
