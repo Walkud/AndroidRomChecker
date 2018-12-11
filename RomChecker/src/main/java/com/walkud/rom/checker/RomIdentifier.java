@@ -10,6 +10,7 @@ import com.walkud.rom.checker.cc.FuntouchOsChecker;
 import com.walkud.rom.checker.cc.GoogleChecker;
 import com.walkud.rom.checker.cc.LgeChecker;
 import com.walkud.rom.checker.cc.MiuiChecker;
+import com.walkud.rom.checker.cc.NubiaChecker;
 import com.walkud.rom.checker.cc.SenseChecker;
 import com.walkud.rom.checker.cc.SmartisanChecker;
 import com.walkud.rom.checker.utils.RomProperties;
@@ -54,7 +55,8 @@ public final class RomIdentifier {
                 new EuiChecker(),
                 new SenseChecker(),
                 new LgeChecker(),
-                new GoogleChecker()
+                new GoogleChecker(),
+                new NubiaChecker()
         );
     }
 

@@ -41,10 +41,11 @@ public enum Rom {
     AmigoOS("amigo"), // 金立
     EUI("letv"), // 乐视
     Sense("sense"), // HTC
+    Google("google"), // 原生
+    NubiaUI("nubia"), // 努比亚
 
     //未适配
     _360OS(""), // 奇酷360
-    NubiaUI(""), // 努比亚
     H2OS(""), // 一加
     YunOS(""), // 阿里巴巴
     YuLong("yulong"), // 酷派
@@ -53,7 +54,6 @@ public enum Rom {
     Lenovo("lenovo"), // 联想
     LG("lg"), // LG
     ZTE("zte"),//中兴
-    Google(""), // 原生
     Other(""); // 其它
     ……
 }

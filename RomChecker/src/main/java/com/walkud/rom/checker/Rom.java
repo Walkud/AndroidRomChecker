@@ -20,10 +20,10 @@ public enum Rom {
     Sense("htc"), // HTC
     LG("lge"), // LG
     Google("google"), // 原生
+    NubiaUI("nubia"), // 努比亚
 
     //未适配
     _360OS(""), // 奇酷360
-    NubiaUI(""), // 努比亚
     H2OS(""), // 一加
     YunOS(""), // 阿里巴巴
     YuLong("yulong"), // 酷派
