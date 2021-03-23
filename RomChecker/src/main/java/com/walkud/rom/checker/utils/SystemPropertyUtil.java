@@ -50,7 +50,8 @@ public class SystemPropertyUtil {
         try {
             Process p = Runtime.getRuntime().exec("getprop");
             properties.load(p.getInputStream());
-        } catch (IOException e) {
+        } catch (Exception e) {
+            // Some devices may result in "IllegalArgumentException Invalid Unicode sequence: illegal character"
             e.printStackTrace();
         }
         return properties;
