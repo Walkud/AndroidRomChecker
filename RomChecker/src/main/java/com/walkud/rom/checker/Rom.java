@@ -11,7 +11,8 @@ public enum Rom {
     //已适配
     MIUI("xiaomi"), // 小米
     Flyme("meizu"), // 魅族
-    EMUI("huawei"), // 华为
+    EMUI("huawei"), // 华为，EMUI
+    HarmonyOS("huawei"), // 华为，鸿蒙
     ColorOS("oppo"), // OPPO
     FuntouchOS("vivo"), // vivo
     SmartisanOS("smartisan"), // 锤子

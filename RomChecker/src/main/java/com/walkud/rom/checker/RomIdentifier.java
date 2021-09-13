@@ -8,6 +8,7 @@ import com.walkud.rom.checker.cc.EuiChecker;
 import com.walkud.rom.checker.cc.FlymeChecker;
 import com.walkud.rom.checker.cc.FuntouchOsChecker;
 import com.walkud.rom.checker.cc.GoogleChecker;
+import com.walkud.rom.checker.cc.HarmonyOsChecker;
 import com.walkud.rom.checker.cc.LgeChecker;
 import com.walkud.rom.checker.cc.MiuiChecker;
 import com.walkud.rom.checker.cc.NubiaChecker;
@@ -46,7 +47,6 @@ public final class RomIdentifier {
     public static List<Checker> getChecker() {
         return Arrays.asList(
                 new MiuiChecker(),
-                new EmuiChecker(),
                 new ColorOsChecker(),
                 new FuntouchOsChecker(),
                 new SmartisanChecker(),
@@ -56,7 +56,9 @@ public final class RomIdentifier {
                 new SenseChecker(),
                 new LgeChecker(),
                 new GoogleChecker(),
-                new NubiaChecker()
+                new NubiaChecker(),
+                new HarmonyOsChecker(),
+                new EmuiChecker()
         );
     }
 
