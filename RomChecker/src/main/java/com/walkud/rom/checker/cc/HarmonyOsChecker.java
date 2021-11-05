@@ -36,7 +36,7 @@ public class HarmonyOsChecker extends Checker {
             Class clz = Class.forName("com.huawei.system.BuildEx");
             Method method = clz.getMethod("getOsBrand");
             return "harmony".equals(method.invoke(clz));
-        } catch (Exception e) {
+        } catch (Throwable e) {
             e.printStackTrace();
         }
         return false;
@@ -51,7 +51,7 @@ public class HarmonyOsChecker extends Checker {
             Class clz = Class.forName("ohos.system.version.SystemVersion");
             Method method = clz.getMethod("getVersion");
             return (String) method.invoke(clz);
-        } catch (Exception e) {
+        } catch (Throwable e) {
             e.printStackTrace();
         }
         return "Unknown";
